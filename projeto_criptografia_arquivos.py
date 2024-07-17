@@ -21,10 +21,10 @@ def criptografia(chave, caminho_arquivo, caminho_arquivo_criptografado):
 
     criarAES = AES.new(chave, AES.MODE_ECB)
     alteraçãopad = pad(leitura, AES.block_size)
-    arquivovascaino = criarAES.encrypt(alteraçãopad)
+    arquivoencript = criarAES.encrypt(alteraçãopad)
 
     with open(caminho_arquivo_criptografado, 'wb') as arquivo:
-        arquivo.write(arquivovascaino)
+        arquivo.write(arquivoencript)
 
 chave = get_random_bytes(16)
 
@@ -55,7 +55,7 @@ def descriptografar_arquivo(chave, caminho_arquivo_criptografado, caminho_arquiv
 
     criarAES = AES.new(chave, AES.MODE_ECB)
     arquivo = criarAES.decrypt(leitura)
-    arquivo_original = unpad(arquivodesvascainado, AES.block_size)
+    arquivo_original = unpad(arquivodescript, AES.block_size)
 
     with open(caminho_arquivo_descriptografado, 'wb') as arquivo:
         arquivo.write(arquivo_original)
