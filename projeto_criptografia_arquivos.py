@@ -43,7 +43,7 @@ try :
   print("Sua chave de descriptografia é:", chave_base64, "Salve ela imediatamente.")
 
 except KeyboardInterrupt:
-  print("O usuário foi otário e parou o procedimento.")
+  print("O usuário foi interrompeu o procedimento.")
 
 """_________________________________________________________________________________________________________
 
