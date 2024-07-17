@@ -70,7 +70,7 @@ else:
 
 # ATIVIDADE 1
 
-def vascodecrypt(gama, colina):
+def decrypt(gama, colina):
     plaintext = ""
     for caracter in gama:
         if caracter.isalpha():
@@ -79,13 +79,13 @@ def vascodecrypt(gama, colina):
             else:
                 decriptadocaracter = chr(((ord(caracter) - ord('A') - colina) % 26) + ord('A'))
         else:
-            vascodecrypt = caracter
+            decrypt = caracter
         plaintext += decriptadocaracter
     return plaintext
 
 def decriptar(gama):
     for colina in range(26):
-        decrypted_text = vascodecrypt(gama, colina)
+        decrypted_text = decrypt(gama, colina)
         print(f"Shift {colina}: {decrypted_text}")
 
 print("Texto cifrado:", convertido)
