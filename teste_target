@@ -1,0 +1,27 @@
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    while fib_sequence[-1] < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+
+def check_fibonacci(number):
+    fib_sequence = fibonacci(number)
+    if number in fib_sequence:
+        return f"O número {number} pertence à sequência de Fibonacci."
+    else:
+        return f"O número {number} NÃO pertence à sequência de Fibonacci."
+
+number = int(input("Informe um número: "))
+print(check_fibonacci(number))
+
+ ###
+
+def count_a_in_string(string):
+    count = string.lower().count('a')
+    if count > 0:
+        return f"A letra 'a' aparece {count} vezes na string."
+    else:
+        return "A letra 'a' não aparece na string."
+
+string = input("Informe uma string: ")
+print(count_a_in_string(string))
